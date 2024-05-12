@@ -1,22 +1,12 @@
 import datetime
 
-# Custom configuration for the Sphinx documentation builder.
-# All configuration specific to your project should be done in this file.
-#
-# The file is included in the common conf.py configuration file.
-# You can modify any of the settings below or add any configuration that
-# is not covered by the common conf.py file.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
-#
-# If you're not familiar with Sphinx and don't want to use advanced
-# features, it is sufficient to update the settings in the "Project
-# information" section.
-
 ############################################################
 ### Project information
 ############################################################
+
+extensions = [
+    "canonical_sphinx",
+]
 
 # Product name
 project = 'Documentation starter pack'
@@ -57,7 +47,7 @@ ogp_image = 'https://assets.ubuntu.com/v1/253da317-image-document-ubuntudocs.svg
 
 # Update with the local path to the favicon for your product
 # (default is the circle of friends)
-html_favicon = '.sphinx/_static/favicon.png'
+#html_favicon = '.sphinx/_static/favicon.png'
 
 # (Some settings must be part of the html_context dictionary, while others
 #  are on root level. Don't move the settings.)
@@ -104,11 +94,11 @@ html_context = {
 
     # Controls the existence of Previous / Next buttons at the bottom of pages
     # Valid options: none, prev, next, both
-    'sequential_nav': "none", 
-    
+    'sequential_nav': "none",
+
     # Controls if to display the contributors of a file or not
     "display_contributors": True,
-    
+
     # Controls time frame for showing the contributors
     "display_contributors_since": ""
 }
@@ -178,7 +168,11 @@ custom_extensions = [
 custom_required_modules = []
 
 # Add files or directories that should be excluded from processing.
-custom_excludes = [
+exclude_patterns = [
+    '_build',
+    'Thumbs.db',
+    '.DS_Store',
+    '.sphinx',
     'doc-cheat-sheet*',
     ]
 
@@ -193,7 +187,9 @@ custom_html_js_files = []
 # Specify a reST string that is included at the end of each file.
 # If commented out, use the default (which pulls the reuse/links.txt
 # file into each reST file).
-# custom_rst_epilog = ''
+rst_epilog = '''
+.. include:: /reuse/links.txt
+'''
 
 # By default, the documentation includes a feedback button at the top.
 # You can disable it by setting the following configuration to True.
