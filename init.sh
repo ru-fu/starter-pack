@@ -36,7 +36,7 @@ if [ "$install_directory" != "." ]; then
     if [ ! -d .github/workflows ]; then
         mkdir -p .github/workflows
     fi
-    mv "$install_directory/sp-files/.github/workflows"/* .github/workflows
+    mv "$temp_directory/sp-files/.github/workflows"/* .github/workflows
     if [ ! -f .wokeignore ]; then
         ln -s "$install_directory/.wokeignore"
     else
