@@ -107,6 +107,8 @@ html_context = {
 # slug (for example, "lxd") here.
 slug = ""
 
+
+templates_path = ['.sphinx/_templates']
 ############################################################
 ### Redirects
 ############################################################
@@ -136,51 +138,10 @@ custom_linkcheck_anchors_ignore_for_url = []
 ### Additions to default configuration
 ############################################################
 
-# Uncomment to overwrite Ubuntu manpages URL template for :manpage: directives:
-# custom_manpages_url = "https://customurl/man{section}/{page}.{section}.html"
-
-## The following settings are appended to the default configuration.
-## Use them to extend the default functionality.
-# NOTE: Remove this variable to disable the MyST parser extensions.
-custom_myst_extensions = []
-
-# Add custom Sphinx extensions as needed.
-# This array contains recommended extensions that should be used.
-# NOTE: The following extensions are handled automatically and do
-# not need to be added here: myst_parser, sphinx_copybutton, sphinx_design,
-# sphinx_reredirects, sphinxcontrib.jquery, sphinxext.opengraph
-custom_extensions = [
-    'sphinx_tabs.tabs',
-    'canonical.youtube-links',
-    'canonical.related-links',
-    'canonical.custom-rst-roles',
-    'canonical.terminal-output',
-    'notfound.extension'
-    ]
-
-# Add custom required Python modules that must be added to the
-# .sphinx/requirements.txt file.
-# NOTE: The following modules are handled automatically and do not need to be
-# added here: canonical-sphinx-extensions, furo, linkify-it-py, myst-parser,
-# pyspelling, sphinx, sphinx-autobuild, sphinx-copybutton, sphinx-design,
-# sphinx-notfound-page, sphinx-reredirects, sphinx-tabs, sphinxcontrib-jquery,
-# sphinxext-opengraph
-custom_required_modules = []
-
 # Add files or directories that should be excluded from processing.
 exclude_patterns = [
-    '_build',
-    'Thumbs.db',
-    '.DS_Store',
-    '.sphinx',
     'doc-cheat-sheet*',
     ]
-
-# Add CSS files (located in .sphinx/_static/)
-custom_html_css_files = []
-
-# Add JavaScript files (located in .sphinx/_static/)
-custom_html_js_files = []
 
 ## The following settings override the default configuration.
 
@@ -197,7 +158,7 @@ disable_feedback_button = False
 
 # Add tags that you want to use for conditional inclusion of text
 # (https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#tags)
-custom_tags = []
+tags = []
 
 ############################################################
 ### Additional configuration
